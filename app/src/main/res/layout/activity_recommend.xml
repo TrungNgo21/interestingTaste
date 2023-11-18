@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.RecommendActivity">
+
+    <include
+        android:id="@+id/backButton"
+        layout="@layout/back_button"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_margin="12dp"></include>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/backButton"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        android:text="Recommend A Dish"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_below="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/foodImg"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@+id/textView2"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="60dp"
+                android:background="@drawable/rounded_stroke"
+                android:elevation="8dp"
+                android:gravity="center">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    app:cardCornerRadius="24dp">
+
+                    <ImageButton
+                        android:id="@+id/addImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/add" />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_below="@+id/foodImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dish's name"
+                        android:textSize="16sp"
+                        android:layout_gravity="start"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/foodNameErr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:textSize="14sp"
+                        android:textStyle="italic"
+                        android:layout_marginStart="4dp"
+                        android:layout_gravity="start"
+                        android:textColor="@color/error" />
+                </LinearLayout>
+
+
+                <EditText
+                    android:id="@+id/foodName"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/rounded_button"
+                    android:drawableLeft="@drawable/fastfood"
+                    android:hint="Enter a name..."
+                    android:maxLines="1"
+                    android:paddingStart="8dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/stroke"
+                    android:textSize="14sp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/categoryLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Category"
+                            android:textSize="16sp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_gravity="start"
+                            android:textColor="@color/black" />
+
+
+                        <RelativeLayout
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/categoryLabel"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight=".28"
+                            android:background="@drawable/rounded_button"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:id="@+id/foodCategory"
+                                android:layout_width="150dp"
+                                android:layout_height="40dp"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:background="@android:color/transparent"
+                                android:gravity="center"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:src="@drawable/drop" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Dish's name"
+                                android:textSize="16sp"
+                                android:layout_gravity="start"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/foodPriceErr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="bottom"
+                                android:textSize="14sp"
+                                android:textStyle="italic"
+                                android:layout_marginStart="4dp"
+                                android:layout_gravity="start"
+                                android:textColor="@color/error" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/foodPrice"
+                            android:layout_width="180dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/rounded_button"
+                            android:paddingStart="8dp"
+                            android:hint="Enter a price..."
+                            android:inputType="numberDecimal"
+                            android:textSize="14sp"
+                            android:textColorHint="@color/stroke"
+                            android:drawableStart="@drawable/dollar" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dish's Description"
+                            android:textSize="16sp"
+                            android:layout_gravity="start"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/foodDesErr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:layout_marginStart="4dp"
+                            android:layout_gravity="start"
+                            android:textColor="@color/error" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/description"
+                        android:layout_width="300dp"
+                        android:layout_height="100dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/rounded_button"
+                        android:drawableStart="@drawable/desciption"
+                        android:hint="Enter a description..."
+                        android:paddingStart="8dp"
+                        android:singleLine="true"
+
+                        android:textColorHint="@color/stroke"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Store's name"
+                                android:textSize="16sp"
+                                android:layout_gravity="start"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/storeNameErr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="bottom"
+                                android:textSize="14sp"
+                                android:textStyle="italic"
+                                android:layout_marginStart="4dp"
+                                android:layout_gravity="start"
+                                android:textColor="@color/error" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/storeName"
+                        android:layout_width="300dp"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/rounded_button"
+                        android:drawableStart="@drawable/location"
+                        android:hint="Enter a store..."
+                        android:maxLines="1"
+                        android:paddingStart="8dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/stroke"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Address"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_gravity="start"
+                        android:textColor="@color/black" />
+
+                    <!--                                <EditText-->
+                    <!--                                    android:layout_width="300dp"-->
+                    <!--                                    android:layout_height="50dp"-->
+                    <!--                                    android:background="@drawable/rounded_button"-->
+                    <!--                                    android:drawableStart="@drawable/location_pin"-->
+                    <!--                                    android:hint="Enter the address..."-->
+                    <!--                                    android:inputType="numberDecimal"-->
+                    <!--                                    android:paddingStart="8dp"-->
+                    <!--                                    android:textColorHint="@color/stroke" />-->
+                    <!--                    <EditText-->
+                    <!--                        android:id="@+id/addAddress"-->
+                    <!--                        android:layout_width="300dp"-->
+                    <!--                        android:layout_height="40dp"-->
+                    <!--                        android:drawableStart="@drawable/location_pin"-->
+                    <!--                        android:background="@drawable/rounded_button"-->
+                    <!--                        android:textSize="14sp"-->
+                    <!--                        android:hint="Add the address..."-->
+                    <!--                        android:textColorHint="@color/stroke"-->
+                    <!--                        android:maxLines="1"-->
+                    <!--                        android:paddingStart="8dp" />-->
+
+                    <fragment
+                        android:id="@+id/autoCompleteAddress"
+                        android:layout_width="300dp"
+                        android:layout_height="40dp"
+                        android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom">
+
+                        <EditText
+                            android:id="@+id/addressDisplay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/addressDisplayErr"
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/error"
+                            android:textStyle="italic" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <ViewStub
+                    android:id="@+id/stub_map"
+                    android:inflatedId="@+id/panel_map"
+                    android:layout="@layout/activity_auto_complete_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="bottom" />
+
+                <Button
+                    android:id="@+id/submitButton"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="70dp"
+                    android:text="Upload" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/main_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+</RelativeLayout>

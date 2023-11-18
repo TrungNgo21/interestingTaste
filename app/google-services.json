@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "775064747507",
+    "project_id": "interestingtaste-9ec6d",
+    "storage_bucket": "interestingtaste-9ec6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775064747507:android:acb26032bbdcb215852686",
+        "android_client_info": {
+          "package_name": "com.example.interestingtaste"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDU9Lcxk3wxcdkNLFaaRGPe61H3XENHkto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

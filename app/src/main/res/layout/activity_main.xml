@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:layout_marginTop="4dp">
+
+        <LinearLayout
+            android:id="@+id/accountPlaceHolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_margin="2dp"
+            android:background="@drawable/chip">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardCornerRadius="99999dp"
+                android:layout_margin="4dp">
+
+                <ImageView
+                    android:id="@+id/userImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/logo"
+                    android:scaleType="fitXY" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/userEmail"
+                android:layout_marginStart="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:text="ngolambaotrung@gmail.com" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/signOutButton"
+            layout="@layout/sign_out_button"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp">
+
+        </include>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/searchBar"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="70dp"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/queryBox"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content"></include>
+
+    </LinearLayout>
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchBar"
+        android:layout_marginTop="4dp"
+        android:id="@+id/shimmerView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:padding="4dp"
+            android:showDividers="middle"
+            android:divider="@drawable/divider_horizontal"
+            android:gravity="center">
+
+            <include layout="@layout/shimmer_dashboard_item"></include>
+
+            <include layout="@layout/shimmer_dashboard_item"></include>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:padding="4dp"
+            android:showDividers="middle"
+            android:divider="@drawable/divider_horizontal"
+            android:layout_marginTop="220dp"
+            android:gravity="center">
+
+            <include layout="@layout/shimmer_dashboard_item"></include>
+
+            <include layout="@layout/shimmer_dashboard_item"></include>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_marginTop="440dp"
+            android:padding="4dp"
+            android:showDividers="middle"
+            android:divider="@drawable/divider_horizontal"
+            android:gravity="center">
+
+            <include layout="@layout/shimmer_dashboard_item"></include>
+
+            <include layout="@layout/shimmer_dashboard_item"></include>
+        </LinearLayout>
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <GridView
+        android:id="@+id/allFood"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:layout_below="@+id/searchBar"
+        android:layout_marginTop="4dp"
+        android:horizontalSpacing="4dp"
+        android:verticalSpacing="4dp"
+        android:gravity="center"
+        android:layout_marginBottom="60dp"
+        android:padding="4dp" />
+
+    <RelativeLayout
+        android:id="@+id/nothingFound"
+        android:background="@color/white"
+        android:layout_below="@+id/searchBar"
+        android:layout_above="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nothing Found !!! Try again"
+            android:textColor="@color/stroke"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        app:menu="@menu/main_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</RelativeLayout>
