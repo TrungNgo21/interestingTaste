@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/mainbg"
+    android:gravity="center"
+    tools:context=".Activity.WelcomeActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to ITASTE !!!"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="@color/stroke" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Where chosing what to eat is not a watse of time!"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/stroke" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:elevation="8dp"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="28dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/toAboutUsButton"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="about us" />
+
+    <Button
+        android:id="@+id/toSignInButton"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Sign in" />
+
+    <Button
+        android:id="@+id/toSignUpButton"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Sign up" />
+
+
+</LinearLayout>

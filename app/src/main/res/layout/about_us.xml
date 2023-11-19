@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="8dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ABOUT US!!!"
+        android:textColor="@color/stroke"
+        android:textStyle="bold"
+        android:textSize="24sp">
+
+    </TextView>
+
+    <TextView
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="fill_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="We are ITatse a start up from RMIT. Nowaday, people are overwhelmed with many foods from wide variety of cuisines. Therefore deciding what to eat is very difficult. Our mission is to provide you guys with a virtual platform helping you with deciding what to eat easier."
+        android:textColor="@color/black" />
+
+    <TextView
+        android:layout_marginHorizontal="8dp"
+        android:gravity="fill_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="we have a dashboard with many dishes from different cuisines where you can have a hint where to eat."
+        android:textColor="@color/black" />
+
+    <TextView
+        android:layout_marginHorizontal="8dp"
+        android:gravity="fill_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="we also let you to share your favorite dishes with other people as well as rate others dishes."
+        android:textColor="@color/black" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Have fun with Itaste!!!"
+        android:textColor="@color/stroke"
+        android:textStyle="bold"
+        android:textSize="24sp" />
+
+
+</LinearLayout>

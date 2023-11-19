@@ -133,6 +133,7 @@ public class FoodDetailActivity extends AppCompatActivity
     String foodPrice = getIntent().getStringExtra("foodPrice");
     String latitude = getIntent().getStringExtra("latitude");
     String longitude = getIntent().getStringExtra("longitude");
+    String numReviews = getIntent().getStringExtra("numReviews");
 
     Picasso.get()
         .load(foodImgUrl)
@@ -155,6 +156,7 @@ public class FoodDetailActivity extends AppCompatActivity
     activityFoodDetailBinding.foodDate.setText(createdDate);
     activityFoodDetailBinding.foodPrice.setText(foodPrice);
     activityFoodDetailBinding.authorDisplay.setText(authorEmail);
+    activityFoodDetailBinding.numReviews.setText(numReviews);
 
     activityFoodDetailBinding.addReview.setOnClickListener(
         view -> {

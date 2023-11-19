@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mainbg"
     tools:context=".Activity.SignInActivity">
 
     <androidx.cardview.widget.CardView
@@ -121,6 +122,8 @@
         android:text="Login" />
 
     <LinearLayout
+        android:paddingHorizontal="4dp"
+        android:background="@color/white"
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -166,6 +169,8 @@
     </LinearLayout>
 
     <TextView
+        android:background="@color/white"
+        android:paddingHorizontal="4dp"
         android:id="@+id/authenticatedFailed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

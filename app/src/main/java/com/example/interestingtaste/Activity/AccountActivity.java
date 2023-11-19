@@ -70,11 +70,18 @@ public class AccountActivity extends AppCompatActivity {
     activityAccountBinding = ActivityAccountBinding.inflate(getLayoutInflater());
     setUpBottomNavigation();
 
+    activityAccountBinding.logoutButton.setOnClickListener(
+        view -> {
+          FirebaseAuth.getInstance().signOut();
+          startActivity(new Intent(this, WelcomeActivity.class));
+          finish();
+        });
+
     FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
     Picasso.get()
         .load(currentUser.getPhotoUrl())
-        .placeholder(R.mipmap.ic_launcher)
+        .placeholder(R.drawable.food_placeholder)
         .into(activityAccountBinding.userImg);
 
     activityAccountBinding

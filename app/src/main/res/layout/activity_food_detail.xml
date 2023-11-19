@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@drawable/mainbg"
     tools:context=".Activity.FoodDetailActivity">
 
     <LinearLayout
@@ -95,7 +95,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/foodImgContainer"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:layout_marginHorizontal="8dp"
         android:paddingStart="8dp">
 
         <TextView
@@ -112,7 +114,7 @@
             android:id="@+id/nameRatingContainer"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="300dp"
+            android:layout_marginStart="280dp"
             android:gravity="center">
 
             <ImageView
@@ -139,6 +141,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@+id/relativeLayout"
+        android:background="@color/white"
         android:layout_marginStart="8dp">
 
         <ImageView
@@ -157,7 +160,7 @@
             android:layout_toEndOf="@+id/imageView2"
             android:gravity="center"
             android:text="Don Chicken"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="italic" />
 
         <LinearLayout
@@ -172,7 +175,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="$"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textColor="@color/black" />
 
             <TextView
@@ -180,7 +183,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="7.5"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -191,6 +194,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout2"
+        android:background="@color/white"
         android:layout_marginStart="8dp">
 
         <ImageView
@@ -206,7 +210,7 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:text="RMIT 702 Đ. Nguyễn Văn Linh, Tân Hưng, Quận 7, Thành phố Hồ Chí Minh 700000, Việt Nam"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textColor="@color/stroke"
             android:textStyle="italic" />
     </LinearLayout>
@@ -215,7 +219,9 @@
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
         android:layout_below="@+id/linearLayout3"
+        android:background="@color/white"
         android:orientation="vertical">
 
         <TextView
@@ -238,11 +244,12 @@
     </LinearLayout>
 
     <RelativeLayout
+        android:layout_marginHorizontal="8dp"
         android:id="@+id/reviewContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout4"
-        android:layout_marginTop="2dp"
+        android:background="@color/white"
         android:gravity="center_vertical">
 
         <TextView
@@ -252,10 +259,21 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:gravity="center_vertical"
-            android:text="Reviews:"
+            android:text="Reviews"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/numReviews"
+            android:layout_toEndOf="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="(4)"
+            android:layout_marginStart="2dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
         <ImageButton
             android:id="@+id/addReview"
@@ -294,7 +312,8 @@
         android:id="@+id/foodDetailReviews"
         android:layout_width="match_parent"
         android:layout_below="@+id/reviewContainer"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginHorizontal="8dp"
         android:layout_height="200dp" />
 
     <RelativeLayout
@@ -302,6 +321,7 @@
         android:background="@color/white"
         android:layout_below="@+id/reviewContainer"
         android:layout_above="@+id/bottomNav"
+        android:layout_marginHorizontal="8dp"
         android:layout_width="match_parent"
         android:gravity="center_horizontal"
         android:layout_height="match_parent">

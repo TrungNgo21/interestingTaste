@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mainbg"
     tools:context=".Activity.AccountActivity">
 
     <include
@@ -90,6 +91,15 @@
                 android:textStyle="italic" />
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:backgroundTint="@color/error"
+            android:text="logout" />
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

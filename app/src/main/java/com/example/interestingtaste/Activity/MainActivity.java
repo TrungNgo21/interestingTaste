@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Toast.makeText(
             getApplicationContext(),
             "Welcome " + FirebaseAuth.getInstance().getCurrentUser().getEmail(),
-            Toast.LENGTH_LONG)
+            Toast.LENGTH_SHORT)
         .show();
 
     mainBinding.accountPlaceHolder.setOnClickListener(
@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         .setOnClickListener(
             view -> {
               FirebaseAuth.getInstance().signOut();
-              startActivity(new Intent(this, SignInActivity.class));
+              startActivity(new Intent(this, WelcomeActivity.class));
             });
     mainBinding.shimmerView.setVisibility(View.VISIBLE);
     mainBinding.shimmerView.startShimmer();

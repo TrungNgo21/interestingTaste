@@ -62,7 +62,9 @@ public class ReviewService {
                         AbsListView listView =
                             foodDetailActivity.findViewById(R.id.foodDetailReviews);
                         TextView rating = foodDetailActivity.findViewById(R.id.foodDetailRating);
+                        TextView numReviews = foodDetailActivity.findViewById(R.id.numReviews);
                         rating.setText(String.valueOf(RatingCalculator.getAvgRating(foodDto)));
+                        numReviews.setText("(" + foodDto.getReviews().toString() + ")");
                         listView.setAdapter(reviewAdapter);
                         noReview.setVisibility(View.INVISIBLE);
                         listView.setVisibility(View.VISIBLE);

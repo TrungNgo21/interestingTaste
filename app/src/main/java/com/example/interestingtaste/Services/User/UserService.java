@@ -85,7 +85,6 @@ public class UserService {
               SignUpActivity activity = (SignUpActivity) context;
               activity.setUiComponentDisabled(true);
             } else {
-
               Intent intent = new Intent(context, MainActivity.class);
               context.startActivity(intent);
             }

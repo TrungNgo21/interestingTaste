@@ -77,6 +77,8 @@ public class FoodService {
                   intent.putExtra("authorDisplay", listT.get(position).getAuthor().getEmail());
                   intent.putExtra("des", listT.get(position).getDescription());
                   intent.putExtra("foodPrice", listT.get(position).getPrice().toString());
+                  intent.putExtra(
+                      "numReviews", "(" + listT.get(position).getReviews().size() + ")");
                   context.startActivity(intent);
                 });
             if (shimmerFrameLayout != null) {
@@ -164,6 +166,8 @@ public class FoodService {
                       intent.putExtra("authorDisplay", listT.get(position).getAuthor().getEmail());
                       intent.putExtra("des", listT.get(position).getDescription());
                       intent.putExtra("foodPrice", listT.get(position).getPrice().toString());
+                      intent.putExtra(
+                          "numReviews", "(" + listT.get(position).getReviews().size() + ")");
                       context.startActivity(intent);
                     });
               }

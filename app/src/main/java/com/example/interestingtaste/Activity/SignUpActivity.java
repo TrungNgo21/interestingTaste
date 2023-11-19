@@ -190,6 +190,7 @@ public class SignUpActivity extends AppCompatActivity {
         view -> {
           activitySignUpBinding.progressBarSignUp.setVisibility(view.VISIBLE);
           setUiComponentDisabled(false);
+          activitySignUpBinding.createdFailed.setVisibility(View.INVISIBLE);
           userService.signUp(
               registeredEmail.getText().toString().trim(),
               registeredPass.getText().toString(),
