@@ -132,7 +132,7 @@ public class RecommendActivity extends AppCompatActivity
   }
 
   private void setFoodImg(Uri uri, ImageButton imageButton) {
-    Picasso.get().load(uri).into(imageButton);
+    Picasso.get().load(uri).placeholder(R.drawable.food_placeholder).into(imageButton);
   }
 
   private Boolean isValidForm(

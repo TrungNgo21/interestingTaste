@@ -4,33 +4,19 @@ import static android.content.ContentValues.TAG;
 
 import android.util.Log;
 
-import androidx.annotation.NonNull;
-
 import com.example.interestingtaste.Dto.CuisinePlaceDto;
 import com.example.interestingtaste.Dto.FoodDto;
-import com.example.interestingtaste.Dto.ReviewDto;
-import com.example.interestingtaste.Dto.UserDto;
 import com.example.interestingtaste.Model.Food;
 import com.example.interestingtaste.Model.Review;
-import com.example.interestingtaste.Model.User;
 import com.example.interestingtaste.Services.FirebaseCallback;
-import com.example.interestingtaste.Services.Food.FoodService;
-import com.example.interestingtaste.Shared.DateFormatter;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firestore.v1.WriteResult;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import lombok.Builder;
 import lombok.NoArgsConstructor;

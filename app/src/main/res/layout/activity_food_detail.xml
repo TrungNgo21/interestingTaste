@@ -297,6 +297,25 @@
         android:layout_marginBottom="70dp"
         android:layout_height="200dp" />
 
+    <RelativeLayout
+        android:id="@+id/nothingFound"
+        android:background="@color/white"
+        android:layout_below="@+id/reviewContainer"
+        android:layout_above="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="No reviews !!!"
+            android:textColor="@color/stroke"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"

@@ -8,13 +8,10 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.example.interestingtaste.Dto.UserDto;
-import com.example.interestingtaste.Model.User;
-import com.example.interestingtaste.R;
 import com.example.interestingtaste.Services.FirebaseCallback;
+import com.example.interestingtaste.Shared.Result;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,8 +19,6 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-
-import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -44,7 +39,7 @@ public class FirebaseAuthRepository {
   private FirebaseUser firebaseUser;
 
   public void createUser(
-      String email, String password, Uri imgUri, final FirebaseCallback<UserDto> callback) {
+      String email, String password, Uri imgUri, final FirebaseCallback<Result<UserDto>> callback) {
     firebaseAuth
         .createUserWithEmailAndPassword(email, password)
         .addOnCompleteListener(
@@ -57,7 +52,7 @@ public class FirebaseAuthRepository {
                 if (imgUri == null) {
                   profileUpdates =
                       new UserProfileChangeRequest.Builder()
-                          .setDisplayName("User Name")
+                          .setDisplayName("Testing User")
                           .setPhotoUri(Uri.parse(defaultUserImg))
                           .build();
 
@@ -73,7 +68,7 @@ public class FirebaseAuthRepository {
                                       .displayName(firebaseUser.getDisplayName())
                                       .build();
 
-                              callback.callbackRes(currentUser);
+                              callback.callbackRes(new Result.Success<>(currentUser));
                             }
                           });
 
@@ -90,8 +85,6 @@ public class FirebaseAuthRepository {
                               if (!task.isSuccessful()) {
                                 throw task.getException();
                               }
-
-                              // Continue with the task to get the download URL
                               return storageReference.getDownloadUrl();
                             }
                           })
@@ -104,7 +97,7 @@ public class FirebaseAuthRepository {
                                 UserProfileChangeRequest profileUpdates;
                                 profileUpdates =
                                     new UserProfileChangeRequest.Builder()
-                                        .setDisplayName("User Name")
+                                        .setDisplayName("Testing User")
                                         .setPhotoUri(downloadUri)
                                         .build();
                                 firebaseUser
@@ -119,22 +112,25 @@ public class FirebaseAuthRepository {
                                                     .displayName(firebaseUser.getDisplayName())
                                                     .build();
 
-                                            callback.callbackRes(currentUser);
+                                            callback.callbackRes(new Result.Success<>(currentUser));
                                           }
                                         });
                               } else {
-                                callback.callbackRes(null);
+                                Log.d(TAG, "The bug is that " + task.getException().getMessage());
+                                callback.callbackRes(new Result.Error(task.getException()));
                               }
                             }
                           });
                 }
               } else {
-                callback.callbackRes(null);
+                Log.d(TAG, "The bug is that " + task.getException().getMessage());
+                callback.callbackRes(new Result.Error(task.getException()));
               }
             });
   }
 
-  public void signInUser(String email, String password, final FirebaseCallback<UserDto> callback) {
+  public void signInUser(
+      String email, String password, final FirebaseCallback<Result<UserDto>> callback) {
     firebaseAuth
         .signInWithEmailAndPassword(email, password)
         .addOnCompleteListener(
@@ -150,11 +146,10 @@ public class FirebaseAuthRepository {
                         .imgUrl(firebaseAuth.getCurrentUser().getPhotoUrl().toString())
                         .build();
 
-                callback.callbackRes(currentUser);
+                callback.callbackRes(new Result.Success<>(currentUser));
               } else {
-                // If sign in fails, display a message to the user.
-                Log.d(TAG, "The bug is that" + task.getException().getMessage());
-                callback.callbackRes(null);
+                Log.d(TAG, "The bug is that " + task.getException().getMessage());
+                callback.callbackRes(new Result.Error(task.getException()));
               }
             });
   }

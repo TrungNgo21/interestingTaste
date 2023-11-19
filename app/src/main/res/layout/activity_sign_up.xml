@@ -130,10 +130,10 @@
                 android:id="@+id/passError"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="> 5 characters and no whitespace"
+                android:layout_marginStart="4dp"
+                android:text="> 5 characters"
                 android:textColor="@color/error"
                 android:textSize="12sp"
-                android:layout_marginStart="4dp"
                 android:textStyle="italic" />
         </LinearLayout>
 

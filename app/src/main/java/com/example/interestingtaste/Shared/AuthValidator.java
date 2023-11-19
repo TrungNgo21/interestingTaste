@@ -9,6 +9,6 @@ public class AuthValidator {
   }
 
   public static boolean isValidPass(String password) {
-    return password.trim().length() > 5;
+    return password.length() > 5;
   }
 }

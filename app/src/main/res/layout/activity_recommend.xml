@@ -183,7 +183,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Dish's name"
+                                android:text="Dish's price"
                                 android:textSize="16sp"
                                 android:layout_gravity="start"
                                 android:textColor="@color/black" />

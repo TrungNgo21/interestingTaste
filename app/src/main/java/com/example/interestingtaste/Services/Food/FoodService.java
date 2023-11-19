@@ -94,6 +94,7 @@ public class FoodService {
       Context context,
       AbsListView viewList,
       @Nullable ShimmerFrameLayout shimmerFrameLayout,
+      RelativeLayout noReview,
       String id) {
     foodRepository.getOneFood(
         id,
@@ -107,9 +108,13 @@ public class FoodService {
               shimmerFrameLayout.stopShimmer();
               shimmerFrameLayout.setVisibility(View.INVISIBLE);
             }
-            ReviewAdapter reviewAdapter = new ReviewAdapter(context, foodDto.getReviews());
-            viewList.setAdapter(reviewAdapter);
-            viewList.setVisibility(View.VISIBLE);
+            if (foodDto.getReviews().isEmpty()) {
+              noReview.setVisibility(View.VISIBLE);
+            } else {
+              ReviewAdapter reviewAdapter = new ReviewAdapter(context, foodDto.getReviews());
+              viewList.setAdapter(reviewAdapter);
+              viewList.setVisibility(View.VISIBLE);
+            }
           }
         });
   }

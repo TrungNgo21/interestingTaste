@@ -2,7 +2,11 @@ package com.example.interestingtaste.Services.Food;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import android.widget.AbsListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +31,12 @@ import lombok.NoArgsConstructor;
 public class ReviewService {
   private final FoodRepository foodRepository = FoodRepository.builder().build();
 
-  public void addReview(Review reviewDto, String foodId, Context context, Dialog reviewDialog) {
+  public void addReview(
+      Review reviewDto,
+      String foodId,
+      Context context,
+      Dialog reviewDialog,
+      RelativeLayout noReview) {
     foodRepository.addReviewToFood(
         reviewDto,
         new FirebaseCallback<Review>() {
@@ -55,7 +64,10 @@ public class ReviewService {
                         TextView rating = foodDetailActivity.findViewById(R.id.foodDetailRating);
                         rating.setText(String.valueOf(RatingCalculator.getAvgRating(foodDto)));
                         listView.setAdapter(reviewAdapter);
+                        noReview.setVisibility(View.INVISIBLE);
+                        listView.setVisibility(View.VISIBLE);
                       } else {
+                        noReview.setVisibility(View.VISIBLE);
                         Toast.makeText(context, "Network error! Try again", Toast.LENGTH_LONG)
                             .show();
                       }

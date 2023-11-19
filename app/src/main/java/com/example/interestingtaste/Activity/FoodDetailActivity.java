@@ -118,6 +118,8 @@ public class FoodDetailActivity extends AppCompatActivity
     setUpBottomNavigation();
     FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
+    activityFoodDetailBinding.nothingFound.setVisibility(View.INVISIBLE);
+
     String foodId = getIntent().getStringExtra("foodId");
     String createdDate = getIntent().getStringExtra("updatedDate");
     String foodImgUrl = getIntent().getStringExtra("image");
@@ -237,7 +239,12 @@ public class FoodDetailActivity extends AppCompatActivity
                           .updatedDate(new Date())
                           .build();
                   ReviewService reviewService = ReviewService.builder().build();
-                  reviewService.addReview(review, foodId, FoodDetailActivity.this, dialog);
+                  reviewService.addReview(
+                      review,
+                      foodId,
+                      FoodDetailActivity.this,
+                      dialog,
+                      activityFoodDetailBinding.nothingFound);
                 }
               });
           dialog.show();
@@ -270,6 +277,7 @@ public class FoodDetailActivity extends AppCompatActivity
         FoodDetailActivity.this,
         activityFoodDetailBinding.foodDetailReviews,
         activityFoodDetailBinding.reviewShimmer,
+        activityFoodDetailBinding.nothingFound,
         foodId);
   }
 }
